@@ -1,0 +1,23 @@
+pm.test("Check Status Code is 200",function(){
+  pm.response.to.have.status(200);
+});
+
+
+
+pm.test("Check Staus page count",function() {
+var jsonData = pm.response.json();
+pm.expect(jsonData.page).to.equal(1);
+});
+
+
+
+pm.test("Check Staus per_page count",function() {
+var jsonData = pm.response.json();
+pm.expect(jsonData.per_page).to.equal(3);
+});
+
+
+pm.test("Check Staus Total count",function() {
+var jsonData = pm.response.json();
+pm.expect(jsonData.Toat).to.equal(12);
+});
